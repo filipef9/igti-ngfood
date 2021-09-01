@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <span>Cardápio</span>
+</mat-toolbar>
+
+<mat-list>
+  <div *ngFor="let opcoesByCategoria of cardapio">
+    <div mat-subheader class="text-accent">{{ opcoesByCategoria.categoria | uppercase }}</div>
+    <mat-list-item *ngFor="let opcao of opcoesByCategoria.opcoes">
+      <div matLine class="d-flex cursor-pointer" (click)="adicionar(opcao)">
+        <div class="col-10">{{ opcao.descricao }}</div>
+        <div class="col-2">{{ opcao.preco }}</div>
+      </div>
+    </mat-list-item>
+  </div>
+</mat-list>
