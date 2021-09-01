@@ -5,6 +5,9 @@ image:
 ports:
   - port: 4200 # Angular App
     onOpen: open-preview
+  - port: 3000 # Backend - Json Server
+    onOpen: ignore
+    visibility: public
 
 vscode:
   extensions:
@@ -16,3 +19,4 @@ vscode:
     - angular.ng-template
     - johnpapa.angular2
     - ms-vscode.vscode-typescript-tslint-plugin
+    - wakatime.vscode-wakatime
