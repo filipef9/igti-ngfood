@@ -1,1 +1,24 @@
-<p>pedido works!</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Pedido</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-list>
+  <mat-list-item *ngIf="pedidoService.getTotalItemsPedido() === 0">
+    <span>Seu pedido está vazio</span>
+  </mat-list-item>
+
+  <mat-list-item *ngFor="let item of pedidoService.pedido">
+    <div matLine class="d-flex">
+      <div class="col-7">{{ item.opcao.descricao }}</div>
+      <div class="col-5">{{ item.quantidade }} x {{ item.opcao.preco }}</div>
+    </div>
+  </mat-list-item>
+</mat-list>
+
+<div>
+  <button mat-raised-button (click)="incluirMaisItens()">Incluir mais itens</button>
+  <button mat-raised-button (click)="limpar()">Limpar</button>
+  <button mat-raised-button color="accent">Concluir</button>
+</div>

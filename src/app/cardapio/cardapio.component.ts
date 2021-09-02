@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { OpcaoDTO, OpcoesAgrupadosPorCategoriaDTO } from '../cardapio.model';
 import { OpcoesService } from '../opcoes.service';
 import { PedidoService } from '../pedido.service';
@@ -14,7 +15,8 @@ export class CardapioComponent implements OnInit {
 
   constructor(
     public pedidoService: PedidoService,
-    private opcoesService: OpcoesService
+    private opcoesService: OpcoesService,
+    private router: Router
   ) {
     this.cardapio = [];
   }
@@ -28,6 +30,10 @@ export class CardapioComponent implements OnInit {
 
   adicionar(opcao: OpcaoDTO): void {
     this.pedidoService.adicionar(opcao);
+  }
+
+  verPedido(): void {
+    this.router.navigateByUrl('/pedido');
   }
 
 }

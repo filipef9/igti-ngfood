@@ -29,6 +29,10 @@ export class PedidoService {
     );
   }
 
+  limpar(): void {
+    this._pedido = [];
+  }
+
   adicionar(opcao: OpcaoDTO): void {
     const foundItemIndex = this.procuraItemNoPedido(opcao);
     const itemJaFoiAdicionadoAoPedido = foundItemIndex !== -1;
