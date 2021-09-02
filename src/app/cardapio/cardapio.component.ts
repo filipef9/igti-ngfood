@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OpcaoDTO, OpcoesAgrupadosPorCategoriaDTO } from '../cardapio.model';
 import { OpcoesService } from '../opcoes.service';
+import { PedidoService } from '../pedido.service';
 
 @Component({
   selector: 'app-cardapio',
@@ -11,7 +12,10 @@ export class CardapioComponent implements OnInit {
 
   cardapio: OpcoesAgrupadosPorCategoriaDTO[];
 
-  constructor(private opcoesService: OpcoesService) {
+  constructor(
+    public pedidoService: PedidoService,
+    private opcoesService: OpcoesService
+  ) {
     this.cardapio = [];
   }
 
@@ -23,7 +27,7 @@ export class CardapioComponent implements OnInit {
   }
 
   adicionar(opcao: OpcaoDTO): void {
-    console.log('opcao', opcao);
+    this.pedidoService.adicionar(opcao);
   }
 
 }

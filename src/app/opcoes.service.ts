@@ -5,7 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { OpcaoDTO, OpcoesAgrupadosPorCategoriaDTO } from './cardapio.model';
 
-const API_URL = 'https://3000-chocolate-marlin-7cgbgwnq.ws-us15.gitpod.io';
+const API_URL = 'https://3000-rose-shrew-cp0xaafb.ws-us16.gitpod.io';
 
 @Injectable({
   providedIn: 'root'

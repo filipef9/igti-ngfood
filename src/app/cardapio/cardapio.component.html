@@ -1,5 +1,13 @@
 <mat-toolbar color="primary">
-  <span>Cardápio</span>
+  <mat-toolbar-row>
+    <span>Cardápio</span>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row>
+    <mat-icon [matBadge]="pedidoService.getTotalItemsPedido()" matBadgeColor="warn">shopping_cart</mat-icon>
+    <button mat-button>VER PEDIDO</button>
+    <span>{{ pedidoService.getValorTotalPedido() }}</span>
+  </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-list>
